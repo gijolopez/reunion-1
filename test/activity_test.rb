@@ -9,6 +9,13 @@ class ActivityTest < Minitest::Test
     activity = Activity.new('hiking')
 
     assert_instance_of Activity, activity
-    assert_equal 'hiking', activity.name 
+    assert_equal 'hiking', activity.name
+  end
+
+  def test_activity_has_participants
+    activity = Activity.new('hiking',12,{"George" =>3,
+      "John" =>2, "Daria" =>0})
+
+    assert_equal 2, activity.participants["John"]
   end
 end
