@@ -22,7 +22,5 @@ class Activity
     participants.map do |name, amount|
       {name => cost_per_person - amount}
     end
-    
-
   end
 end
