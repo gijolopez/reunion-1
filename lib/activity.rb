@@ -1,3 +1,4 @@
+require 'pry'
 class Activity
   attr_reader :name,
               :total_cost,
@@ -9,4 +10,19 @@ class Activity
     @participants = participants
   end
 
+  def add_participant(name, amount)
+    participants[name] = amount
+  end
+
+  def cost_per_person
+    total_cost/participants.count
+  end
+
+  def person_owes
+    participants.map do |name, amount|
+      {name => cost_per_person - amount}
+    end
+    
+
+  end
 end
