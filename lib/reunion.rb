@@ -1,9 +1,11 @@
 require './lib/activity'
 
 class Reunion
-  attr_reader :location
+  attr_reader :location,
+              :activities
 
-  def initialize(location)
+  def initialize(location, activities = [])
     @location = location
+    @activities = activities
   end
 end
